@@ -28,8 +28,8 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
 
-  document.querySelector(".right-part-middle").addEventListener("click", (e)=>{   
-    if(e.target.classList.contains('box-cross')){
+  document.querySelector(".right-part-middle").addEventListener("click", (e)=>{     
+    if(e.target.classList.contains('box-cross') || e.target.classList.contains('fa-solid')){
         if(txt.length <= 6 && txt.length > 0){
             txt = txt.slice(0,txt.length-1);
             inputValue.value = txt;
@@ -41,7 +41,6 @@ function getRndInteger(min, max) {
         txt = "";
         inputValue.value = txt;
     }else if(e.target.classList.contains('box-submit')){
-        debugger;
         console.log(generatedSecretKey.value);
         console.log(txt);
         if(generatedSecretKey.value !== "" && txt !== ""){
@@ -70,7 +69,7 @@ function getRndInteger(min, max) {
  
 
   })
-
+//show message div
   function popup(message){
     pMessage.innerHTML = message;
     pMessage.parentElement.style.display = "block";
@@ -80,11 +79,8 @@ function getRndInteger(min, max) {
 }
 //get root variable
 function myFunction_get(element, variableName) {  
-    // Get the styles (properties and values) for the root
     var rs = getComputedStyle(element);
-    // Alert the value of the --blue variable
     return rs.getPropertyValue(variableName)
-    // alert("The value of --blue is: " + rs.getPropertyValue(variableName));
   }
 
 
