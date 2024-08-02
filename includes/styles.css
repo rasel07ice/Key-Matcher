@@ -1,0 +1,178 @@
+/* reset style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #eb3b5a;
+  --background-color: #dfe6e9;
+  --background-app-color: #222f3e;
+  --background-input-color: #4b4b4b;
+  --primary-theme-color: #26de81;
+  --fail-message-color: #ff6b81;;
+  --accent-color-dark: #1d69a3;
+  --padding-inline-section: 20px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary-text-color);
+  font-size: 62.5%;
+}
+
+.btnGenerate {
+  background-color: var(--primary-theme-color);
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  color: inherit;
+  width: 70%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.main-container {
+  background-color: var(--background-color);
+  padding: 30px;
+}
+
+.container {
+  max-width: 90%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.left-part {
+  background-color: var(--background-app-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px 10px;
+}
+
+.left-part input[type="password"],
+.right-part-top input[type="text"] {
+  width: 70%;
+  border: 2px solid var(--primary-theme-color);
+  border-radius: 5px;
+  outline: none;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.left-part input[type="password"]:disabled {
+  background: var(--background-input-color);
+  color: inherit;
+  letter-spacing: 5px;
+}
+
+.right-part {
+  background-color: var(--background-app-color);
+  width: 100%;
+  padding: 40px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.right-part-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.pEnterPing {
+  font-size: 1.3rem;
+}
+
+.right-part-top input[type="text"] {
+  margin-top: 10px;
+  background: var(--background-input-color);
+  color: inherit;
+}
+
+.box {
+  background: var(--background-input-color);
+  padding: 15px;
+  color: inherit;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 2px;
+}
+.right-part-middle {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  align-items: center;
+  gap: 7px;
+  justify-content: center;
+}
+
+.box-cross {
+  background-color: #ff7f50;
+}
+
+.box-submit {
+  background-color: var(--primary-theme-color);
+}
+
+.box-clear {
+  background-color: #ff4757;
+}
+.right-part-bottom {
+  margin-top: 20px;
+  background-color: #ff6b81;
+  padding: 10px;
+  font-size: 1rem;
+  width: 54%;
+  display: none;
+  text-align: center;
+}
+
+@media only screen and (min-width: 576px) {
+  .left-part input[type="password"],
+  .right-part-top input[type="text"] {
+    width: 60%;
+  }
+  .btnGenerate {
+    width: 60%;
+  }
+  .right-part-middle {
+    width: 60%;
+    grid-template-columns: repeat(3, 100px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .left-part input[type="password"],
+  .right-part-top input[type="text"] {
+    width: 55%;
+  }
+  .btnGenerate {
+    width: 55%;
+  }
+  .right-part-middle {
+    width: 60%;
+    grid-template-columns: repeat(4, 100px);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}

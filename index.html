@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="includes/styles.css" />
+    <title>🔑 Secret Key Matcher</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+        <div class="left-part">
+          <button class="btnGenerate">Generate Key</button
+          ><input
+            type="password"
+            name="inSecretKey"
+            id="inSecretKey"
+            disabled
+          />
+        </div>
+        <div class="right-part">
+          <div class="right-part-top">
+            <p class="pEnterPing">Enter PIN</p>
+            <input
+              type="text"
+              name="inPin"
+              id="inPin"
+              minlength="6"
+              maxlength="6"
+            />
+          </div>
+          <div class="right-part-middle">
+            <div class="box box-1">1</div>
+            <div class="box box-2">2</div>
+            <div class="box box-3">3</div>
+            <div class="box box-4">4</div>
+            <div class="box box-5">5</div>
+            <div class="box box-6">6</div>
+            <div class="box box-7">7</div>
+            <div class="box box-8">8</div>
+            <div class="box box-9">9</div>
+            <div class="box box-0">0</div>
+            <div class="box box-cross">*</div>
+            <div class="box box-submit">submit</div>
+            <div class="box box-clear">Clear</div>
+          </div>
+          <div class="right-part-bottom">
+            <p class="message">
+              <i class="fa-regular fa-face-sad-tear"></i>&nbsp;Genarate key did
+              not match
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="includes/script.js"></script>
+  </body>
+</html>
