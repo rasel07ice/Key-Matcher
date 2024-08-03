@@ -72,9 +72,9 @@ function getRndInteger(min, max) {
 //show message div
   function popup(message){
     pMessage.innerHTML = message;
-    pMessage.parentElement.style.display = "block";
+    pMessage.parentElement.style.visibility = "visible";
     setTimeout(() => {
-        pMessage.parentElement.style.display = "none";
+        pMessage.parentElement.style.visibility = "hidden";
     }, 3000);
 }
 //get root variable
