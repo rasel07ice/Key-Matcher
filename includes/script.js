@@ -69,6 +69,15 @@ function getRndInteger(min, max) {
  
 
   })
+
+  document.querySelector(".containerOne input").addEventListener("click", (e)=>{
+    if (generatedSecretKey.type === "password") {
+        generatedSecretKey.type = "text";
+    } else {
+        generatedSecretKey.type = "password";
+    }
+  })
+
 //show message div
   function popup(message){
     pMessage.innerHTML = message;

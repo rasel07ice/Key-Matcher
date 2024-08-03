@@ -64,6 +64,7 @@ body {
 }
 
 .left-part input[type="password"],
+.left-part input[type="text"],
 .right-part-top input[type="text"] {
   width: 70%;
   border: 2px solid var(--primary-theme-color);
@@ -74,7 +75,83 @@ body {
   font-size: 1.5rem;
 }
 
+/* Custom Checkbox */
+/* The container */
+.containerOne {
+  margin-top: 10px;
+  display: block;
+  position: relative;
+  padding-left: 34px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.containerOne input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: var(--background-input-color);
+}
+
+/* On mouse-over, add a grey background color */
+.containerOne:hover input ~ .checkmark {
+  background-color: var(--background-input-color);
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerOne input:checked ~ .checkmark {
+  background-color: var(--primary-theme-color);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.containerOne input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerOne .checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 3px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* End of Custom checkbox */
+
 .left-part input[type="password"]:disabled {
+  background: var(--background-input-color);
+  color: inherit;
+  letter-spacing: 5px;
+}
+.left-part input[type="text"]:disabled {
   background: var(--background-input-color);
   color: inherit;
   letter-spacing: 5px;
@@ -144,9 +221,13 @@ body {
   visibility: hidden;
 }
 
+.divShowPassword {
+  margin-top: 10px;
+}
+
 @media only screen and (min-width: 576px) {
   .left-part input[type="password"],
-  .right-part-top input[type="text"] {
+  .left-part input[type="text"] .right-part-top input[type="text"] {
     width: 60%;
   }
   .btnGenerate {
@@ -160,6 +241,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .left-part input[type="password"],
+  .left-part input[type="text"],
   .right-part-top input[type="text"] {
     width: 55%;
   }
