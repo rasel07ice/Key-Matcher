@@ -6,7 +6,8 @@ const messages = {
     succes: `<i class="fa-regular fa-face-smile"></i>&nbsp;Congratulations! Key is matched`,
     fail: `<i class="fa-regular fa-face-sad-tear"></i>&nbsp;Ops! Key did not match. Please try again`,
      inputNull: `<i class="fa-regular fa-face-angry"></i>&nbsp;Please enter PIN first`,
-      generatedSecretKeyNull: `<i class="fa-regular fa-face-angry"></i>&nbsp;See left! Press Generate key first`
+      generatedSecretKeyNull: `<i class="fa-regular fa-face-angry"></i>&nbsp;See left! Press Generate key first`,
+      generatedSecretKeyShow: `<i class="fa-regular fa-face-angry"></i>&nbsp;Atleast try 5 times`
 }
 
 const css_variables = {
@@ -15,6 +16,7 @@ const css_variables = {
 }
 
 let txt = "";
+let count = 0;
 
 
 document.querySelector(".btnGenerate").addEventListener("click", ()=>{
@@ -51,6 +53,7 @@ function getRndInteger(min, max) {
                 popup(messages["fail"]);
                 pMessage.parentElement.style.backgroundColor = myFunction_get(pMessage.parentElement,css_variables["fail"] )
             }
+            count++;
         }
         else{
             let msg = txt == "" ? messages["inputNull"] : messages["generatedSecretKeyNull"];
@@ -71,10 +74,16 @@ function getRndInteger(min, max) {
   })
 
   document.querySelector(".containerOne input").addEventListener("click", (e)=>{
-    if (generatedSecretKey.type === "password") {
-        generatedSecretKey.type = "text";
-    } else {
-        generatedSecretKey.type = "password";
+    if(count > 5){
+        if (generatedSecretKey.type === "password") {
+            generatedSecretKey.type = "text";
+        } else {
+            generatedSecretKey.type = "password";
+        }
+    }else{
+        popup(messages["generatedSecretKeyShow"]);
+        pMessage.parentElement.style.backgroundColor = myFunction_get(pMessage.parentElement,css_variables["fail"] )
+        e.target.checked = false;
     }
   })
 
